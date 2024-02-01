@@ -27,3 +27,22 @@ Note
 
 Pass the -u option with the ansible command if the username is different on the control node and the managed node(s).
 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Tips for building inventories
+Ensure that group names are meaningful and unique. Group names are also case sensitive.
+
+Avoid spaces, hyphens, and preceding numbers (use floor_19, not 19th_floor) in group names.
+
+Group hosts in your inventory logically according to their What, Where, and When.
+
+What
+Group hosts according to the topology, for example: db, web, leaf, spine.
+
+Where
+Group hosts by geographic location, for example: datacenter, region, floor, building.
+
+When
+Group hosts by stage, for example: development, test, staging, production.
+
