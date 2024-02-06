@@ -2,10 +2,8 @@
   hosts: all
   vars:                                   # Global Variables : All the tasks of this play can access this variable
     URL: play.google.com
-  vars_prompt:
-    - name: URNAME
-      prompt: Enter your name
-      private: false
+  vars_files:
+    - "{{ENV}}"
   tasks:
     - name: Printing the variable
       ansible.builtin.debug:
