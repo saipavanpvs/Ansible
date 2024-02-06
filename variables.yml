@@ -1,0 +1,8 @@
+- name: demo on variables
+  hosts: all
+  vars:
+    NAME: PAVAN 
+  task:
+    - name: Printing the variables
+    ansible.builtin.debug:
+      msg: {{NAME}}
