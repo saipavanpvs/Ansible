@@ -1,0 +1,9 @@
+- name: using shell commands
+  hosts: all
+  tasks: 
+    - name: demo on shell
+      ansible.builtin.shell: uptime
+      register: name
+    - name: Printing the variable
+      ansible.builtin.debug:
+        msg: "{{name}}"
