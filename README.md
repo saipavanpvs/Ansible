@@ -140,7 +140,7 @@ You can set variables based on facts about the system discovered during the play
 While it's true that you can assign values directly to variables, set_fact provides more flexibility and allows you to create dynamic, context-dependent playbooks. It can be particularly useful in scenarios where the values depend on the runtime context or are derived from other tasks' outputs or facts.
 
 
-
+reference:https://chat.openai.com/c/7d4af45e-cb0f-4915-94a1-621f0db4d037
 
 
 
