@@ -63,3 +63,5 @@ to get the output, register is used, it will capture the output by the shell com
 set_facts:
 It will capture the output of the result and store it in a varibale.
 it can be used anywhere.
+It can be used to capture the error codes and based on it , we can perform actions on it.
+
