@@ -8,9 +8,6 @@
       ansible.builtin.debug:
         msg: "{{name}}"
   tasks: 
-    - name: demo on shell2
-      ansible.builtin.shell: uptime
-      register: name
     - name: Printing the variable
       ansible.builtin.debug:
         msg: "{{name.stdout}}"
