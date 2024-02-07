@@ -3,6 +3,6 @@
   tasks: 
   - name: demo1
     ansible.builtin.shell:id
-      register: OUT
+    register: OUT
   - name: printig tje variable
       msg: "{{OUT}}"
