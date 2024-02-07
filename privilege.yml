@@ -1,0 +1,8 @@
+- name: demo on root user
+  hosts: all
+  tasks: 
+  - name: demo1
+    ansible.builtin.shell:id
+      register: OUT
+  - name: printig tje variable
+      msg: "{{OUT}}"
