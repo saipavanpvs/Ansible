@@ -1,5 +1,6 @@
 - name: demo on root user
   hosts: all
+  become: yes
   tasks: 
   - name: demo1
     ansible.builtin.shell: id
