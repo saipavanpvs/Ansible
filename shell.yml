@@ -6,8 +6,7 @@
       register: name
     - name: Printing the variable
       ansible.builtin.debug:
-        msg: "{{name}}"
-  tasks: 
+        msg: "{{name}}" 
     - name: Printing the variable
       ansible.builtin.debug:
         msg: "{{name.stdout}}"
