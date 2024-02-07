@@ -46,3 +46,20 @@ Group hosts by geographic location, for example: datacenter, region, floor, buil
 When
 Group hosts by stage, for example: development, test, staging, production.
 
+
+whenever in ansible if a particular tasks fail, the subsequent task will be a failure and playbook will be exited.
+To avoid this, use a tag ignore_errors: yes, it will ignore the current task errros and proceed with the next step.
+
+gather_facts: yes or no
+
+by default, it is yes, if it is set to no, ansible will not gather the facts related to the hosts.
+
+Note: gathering facts means getting all the information about the hosts assigned.
+
+--> ansible provides all the builtin modules or controllers to access any of the commands.
+if it is not in ansible, we can use shell commands, by default ansible shell won't print the output of the shell result.
+to get the output, register is used, it will capture the output by the shell commands.
+
+set_facts:
+It will capture the output of the result and store it in a varibale.
+it can be used anywhere.
