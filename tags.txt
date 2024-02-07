@@ -1,0 +1,24 @@
+If you have a large playbook, it may be useful to run only specific parts of it instead of running the entire playbook. You can do this with Ansible tags. Using tags to execute or skip selected tasks is a two-step process:
+
+Add tags to your tasks, either individually or with tag inheritance from a block, play, role, or import.
+
+Select or skip tags when you run your playbook.
+
+
+Selecting or skipping tags when you run a playbook
+Once you have added tags to your tasks, includes, blocks, plays, roles, and imports, you can selectively execute or skip tasks based on their tags when you run ansible-playbook. Ansible runs or skips all tasks with tags that match the tags you pass at the command line. If you have added a tag at the block or play level, with roles, or with an import, that tag applies to every task within the block, play, role, or imported role or file. If you have a role with several tags and you want to call subsets of the role at different times, either use it with dynamic includes, or split the role into multiple roles.
+
+ansible-playbook offers five tag-related command-line options:
+
+--tags all - run all tasks, ignore tags (default behavior)
+
+--tags tag1,tag2 - run only tasks with either the tag tag1 or the tag tag2
+
+--skip-tags tag3,tag4 - run all tasks except those with either the tag tag3 or the tag tag4
+
+--tags tagged - run only tasks with at least one tag
+
+--tags untagged - run only tasks with no tags
+
+
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_tags.html
