@@ -3,7 +3,7 @@
   vars:                                   # Global Variables : All the tasks of this play can access this variable
     URL: play.google.com
   vars_files:
-    - "{{ENV}}"
+    - "{{ENV}}.yml"
   tasks:
     - name: Printing the variable
       ansible.builtin.debug:

@@ -1,0 +1,7 @@
+- name: facts on ansible
+  hosts: all
+  gather_facts: no
+  tasks: 
+    - name: gathering facts
+      ansible.builtin.debug:
+        msg: server flavor is {{ansible_distribution}}
