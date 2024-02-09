@@ -1,5 +1,4 @@
 - name: exmaple for unarchiving the file
-  ansible.builtin.unarchive:
+ansible.builtin.unarchive:
   src: random text
   dest: /folder
-
