@@ -1,7 +1,7 @@
 #Installing Ngnix
 - name: Installing Ngnix
   ansible.builtin.package:
-    name: ngnix
+    name: nginx
     state: present
 
 - name: Unarchive the files
