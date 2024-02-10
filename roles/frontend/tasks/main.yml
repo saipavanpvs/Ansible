@@ -29,7 +29,7 @@
 
 - name: restarting the servivce
   ansible.builtin.service:
-    name: ngnix
+    name: nginx
     state: restarted
     enabled: yes
     daemon-reload: yes
