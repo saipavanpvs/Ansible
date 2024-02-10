@@ -1,4 +1,5 @@
 - name: Configyring frontend 
   hosts: all 
+  become: yes
   roles:
     - frontend
