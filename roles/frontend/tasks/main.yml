@@ -4,6 +4,7 @@
     name: nginx
     state: present
 
+## used to download and unzip the files, it unzips the file in /tmp folder (file name is frontend-main )
 - name: Unarchive the files
   ansible.builtin.unarchive:
     src: https://github.com/stans-robot-project/frontend/archive/main.zip
