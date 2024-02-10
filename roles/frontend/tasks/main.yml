@@ -1,0 +1,23 @@
+#Installing Ngnix
+- name: Installing Ngnix
+  ansible.builtin.package:
+    name: ngnix
+    state: present
+
+- name: Unarchive the files
+  ansible.builtin.unarchive:
+    src: https://github.com/stans-robot-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: deleting the existing files 
+  ansible.builtin.files:
+    src: /usr/share/nginx/html
+    state: absent
+
+- name: copying the files 
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
