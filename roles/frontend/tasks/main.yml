@@ -11,7 +11,7 @@
     remote_src: yes
 
 - name: deleting the existing files 
-  ansible.builtin.files:
+  ansible.builtin.file:
     src: /usr/share/nginx/html
     state: absent
 
