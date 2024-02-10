@@ -1,5 +1,5 @@
 - name: Configyring frontend 
-  hosts: {{COMPONENT}}
+  hosts: "{{COMPONENT}}"
   become: yes
   roles:
-    - {{COMPONENT}}
+    - "{{COMPONENT}}"
