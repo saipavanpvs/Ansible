@@ -9,11 +9,11 @@
     state: present
 
 - name: enabling the service
-  ansible.builtin.service:
+  systemd:
     name: mongod
     state: restarted
     enabled: yes
-    
+
 - name: configuring the name
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
 
