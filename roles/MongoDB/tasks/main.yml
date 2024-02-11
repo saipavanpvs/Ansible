@@ -16,7 +16,3 @@
 
 - name: configuring the name
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
-
-
-
-  
