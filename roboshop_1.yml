@@ -1,5 +1,5 @@
 - name: Configyring {{COMPONENT}} 
-  hosts: all
+  hosts: "{{COMPONENT}}"
   become: yes
   roles:
-    - {{COMPONENT}}
+    - "{{COMPONENT}}"
