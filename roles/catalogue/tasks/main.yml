@@ -24,7 +24,7 @@
 
 - name: copying {{COMPONENT}} user components
   ansible.builtin.copy:
-    path: /tmp/{{COMPONENT}}-main
+    src: /tmp/{{COMPONENT}}-main
     dest: /home/{{APPUSER}}/{{COMPONENT}}
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
