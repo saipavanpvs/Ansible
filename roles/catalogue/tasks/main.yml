@@ -32,10 +32,8 @@
 
 - name: Installing npm 
   community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
     state: present
-
-
 
 - name: configuring the name
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
