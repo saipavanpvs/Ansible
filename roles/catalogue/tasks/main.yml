@@ -31,7 +31,7 @@
     remote_src: yes
 
 - name: Installing npm 
-  community.genral.npm:
+  community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}
 
 
