@@ -17,7 +17,7 @@
     remote_src: yes
 
 - name: Cleaning the {{COMPONENT}}
-  ansible.builtin.files:
+  ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}
     state: absent
   ignore_errors: true
