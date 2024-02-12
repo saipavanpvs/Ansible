@@ -1,8 +1,3 @@
-- name: configuring the repo
-  ansible.builtin.copy:
-    src: mongod.conf
-    dest: /etc/yum.repos.d/mongodb.repo
-
 - name: installing the mongod
   ansible.builtin.package:
     name: mongodb-org
@@ -27,7 +22,7 @@
 
 - name: Run a js file containing MongoDB commands with pseudo-idempotency
   community.mongodb.mongodb_shell:
-    file: /etc/mongodb-main/{{item}}
+    file: /tmp/mongodb-main/{{item}}
     idempotent: yes
   loop:
     - catalogue.js
