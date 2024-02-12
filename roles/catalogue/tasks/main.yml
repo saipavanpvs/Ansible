@@ -1,6 +1,6 @@
-- name: installing the mongod
+- name: installing the nodejs
   ansible.builtin.package:
-    name: mongodb-org
+    name: nodejs
     state: present
 
 - name: enabling the service
