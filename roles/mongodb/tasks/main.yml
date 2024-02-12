@@ -16,7 +16,7 @@
 - name: enabling the permissions 
   ansible.builtin.replace:
     path: /etc/mongod.conf
-    regex: '127.0.0.0'
+    regexp: '127.0.0.0'
     replace: '0.0.0.0'
 
 - name: downloading and extracting the {{COMPONENT}} schema 
