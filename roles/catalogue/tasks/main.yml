@@ -33,6 +33,7 @@
 - name: Installing npm 
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}
+    state: present
 
 
 
