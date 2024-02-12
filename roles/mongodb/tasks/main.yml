@@ -25,5 +25,13 @@
     dest: /tmp
     remote_src: yes
 
+- name: Run a js file containing MongoDB commands with pseudo-idempotency
+  community.mongodb.mongodb_shell:
+    file: /etc/mongod-main/{{item}}
+    idempotent: yes
+  loop:
+    - catalogue.js
+    - users.js
+
 - name: configuring the name
   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
