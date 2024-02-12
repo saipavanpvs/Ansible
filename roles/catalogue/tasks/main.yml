@@ -18,7 +18,7 @@
 
 - name: Cleaning the {{COMPONENT}}
   ansible.builtin.files:
-    path: /tmp/{{APPUSER}}/{{COMPONENT}}
+    path: /home/{{APPUSER}}/{{COMPONENT}}
     state: absent
   ignore_errors: true
 
