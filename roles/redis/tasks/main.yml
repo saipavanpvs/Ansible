@@ -1,6 +1,5 @@
 - name: configuring the repo
   ansible.builtin.shell: curl -o /etc/yum.repos.d/redis.repo http://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo
-  register: redis.conf
 
 - name: installing the redis  
   ansible.builtin.package:
