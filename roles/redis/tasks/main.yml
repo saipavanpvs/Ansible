@@ -19,6 +19,12 @@
     regexp: '127.0.0.0'
     replace: '0.0.0.0'
 
+- name: enabling the service
+  systemd:
+    name: redis
+    state: restarted
+    enabled: yes
+
 
 
 

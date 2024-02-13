@@ -13,6 +13,7 @@
     name: mongod
     state: restarted
     enabled: yes
+    
 - name: enabling the permissions 
   ansible.builtin.replace:
     path: /etc/mongod.conf
