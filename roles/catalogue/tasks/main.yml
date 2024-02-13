@@ -1,10 +1,7 @@
 - name: configuring nodejs
-  ansible.builtin.shell: curl --silent --locaation https://rpm.nodesource.com/setup_16.x | sudo bash -
-
-- name: installing the nodejs
-  ansible.builtin.package:
-    name: nodejs
-    state: present
+  ansible.builtin.inclue:
+   name: common 
+   tasks_from: nodejs
 
 - name: Add the user {{APPUSER}} with a specific uid and a primary group of 'admin'
   ansible.builtin.user:
