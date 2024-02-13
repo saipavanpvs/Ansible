@@ -1,0 +1,11 @@
+- name: configuring the repo
+  ansible.builtin.shell: curl http://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo
+  register: redis.conf
+
+- name: installing the redis  
+  ansible.builtin.package:
+    name: redis-6.2.13
+    state: present
+
+
+
