@@ -3,7 +3,7 @@
 
 - name: installing the redis  
   ansible.builtin.package:
-    name: redis-6.2.13
+    name: redis
     state: present
 
 - name: enabling the permissions 
