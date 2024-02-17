@@ -12,3 +12,10 @@
   ansible.builtin.package:
     name: mysql-community-server
     state: present
+
+- name: Starting {{COMPONENT}}
+  systemd:
+    name: "{{COMPONENT}}"
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
