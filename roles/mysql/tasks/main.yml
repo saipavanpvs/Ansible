@@ -1,0 +1,3 @@
+- name: configuring the repo
+  ansible.builtin.shell: curl https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo
+  register: mysql_repo
