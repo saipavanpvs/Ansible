@@ -4,6 +4,6 @@
 
 - name: copying the repo
   ansible.builtin.copy:
-    src: "{{mysql_repo}}"
+    content: "{{mysql_repo}}"
     dest: /etc/yum.repos.d/mysql.repo
     remote_src: yes
