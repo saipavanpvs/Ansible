@@ -3,6 +3,12 @@
     name: common
     tasks_from: create_user
 
+- name: Installing Nodejs
+  ansible.builtin.package:
+      name: nodejs
+      state: present
+
+
 - name: Download and extracting {{COMPONENT}}
   ansible.builtin.include_role:
     name: common
