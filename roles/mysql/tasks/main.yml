@@ -3,7 +3,7 @@
   register: mysql_repo
 
 - name: copying the repo
-  ansible.builtn.copy:
+  ansible.builtin.copy:
   src: mysql_repo
   dest: /etc/yum.repos.d/mysql.repo
   remote_src: yes
