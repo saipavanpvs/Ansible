@@ -1,12 +1,15 @@
-- name: configuring the repo
-  ansible.builtin.shell: curl https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo
-  register: mysql_repo
-
-- name: copying the repo
+- name: Configuring the {{COMPONENT}} repo
   ansible.builtin.copy:
-    content: "{{mysql_repo}}"
-    dest: /etc/yum.repos.d/mysql.repo
-    remote_src: yes
+    src: "{{COMPONENT}}.repo"
+    dest: /etc/yum.repos.d/{{COMPONENT}}.repo
+
+- name: Installing {{COMPONENT}}
+  ansible.builtin.package:
+      name:
+        - mysql-community-server
+        - MySQL-python
+        - python3-PyMySQL
+      state: present
 
 - name: Installing the {{COMPONENT}}
   ansible.builtin.package:
