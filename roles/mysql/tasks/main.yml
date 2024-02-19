@@ -18,7 +18,7 @@
 
 - name: Starting {{COMPONENT}}
   systemd:
-    name: "{{COMPONENT}}"
+    name: mysqld
     state: restarted
     enabled: yes
     daemon_reload: yes
