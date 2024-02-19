@@ -53,3 +53,16 @@
     dest: /tmp
     remote_src: yes
 
+- name: Injecting the schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    login_user: root
+    login_password: "{{ROOT_PASSWORD}}"
+    target: /tmp/mysql-main/shipping.sql
+
+- name: Configuring Name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_name
+
