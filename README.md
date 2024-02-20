@@ -320,4 +320,35 @@ Use special variables in rescue section.
            msg: It is still false!!!
 
 
+####### RABBITMQ USER CREATION #########
+
+- name: Create RabbitMQ User
+  community.rabbitmq.rabbitmq_user:
+    user: joe
+    password: "securepassword"  # Replace with a strong and secure password
+    vhost: /                     # Specify the virtual host
+    configure_priv: ".*"         # Permissions to configure resources
+    read_priv: ".*"              # Permissions to read from resources
+    write_priv: ".*"             # Permissions to write (publish) to resources
+    state: present
+
+configure_priv: .*: Grants the user permission to configure (create, delete, or modify) any resource within the specified virtual host.
+
+read_priv: .*: Grants the user permission to read (consume messages) from any resource within the specified virtual host.
+
+write_priv: .*: Grants the user permission to write (publish messages) to any resource within the specified virtual host.
+
+
+It seems like your input is a forward slash ("/"), which is often used to represent the root directory or the root of a hierarchy. In the context of RabbitMQ, the forward slash is commonly used to denote the default virtual host.
+
+In the previous examples related to RabbitMQ, when specifying vhost: /, it means that you are referring to the root virtual host. In RabbitMQ, a virtual host is a way to partition resources and permissions within the RabbitMQ broker.
+
+Here's a quick recap:
+
+vhost: /: Specifies the root virtual host. In RabbitMQ, the root virtual host is typically used by default, and it is denoted by a forward slash ("/").
+So, if you are creating a RabbitMQ user with permissions for the root virtual host, using vhost: / is appropriate. If you have additional virtual hosts configured in your RabbitMQ setup, you would replace / with the name of the specific virtual host you want the user to have access to.
+
+
+In the context of message-oriented middleware systems like RabbitMQ, a virtual host is a way to create multiple isolated environments within a single RabbitMQ broker. Each virtual host has its own set of exchanges, queues, and bindings, as well as its own users and permissions. This allows you to logically separate different applications or clients, providing a level of isolation and organization.
+
 
