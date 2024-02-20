@@ -59,7 +59,7 @@
     state: import
     name: all
     login_user: root
-    login_password: "P@ssw0rd#123"
+    login_password: "{{ROOT_PASSWORD}}"
     target: /tmp/mysql-main/shipping.sql
 
 - name: Configuring Name
