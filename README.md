@@ -469,5 +469,6 @@ This key should be used while we need to use the original password .
 ansible-playbook --vault-password-file=path/to/vault_password_file your_playbook.yml
 it will prompt for the password to enter, need to enter the key that we used to encrypt the password
 .
+for refeence, see sessin 35 video from 30mins like that.
 
 
