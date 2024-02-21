@@ -364,3 +364,44 @@ and the role that needs to be executed this dependency has to be placed in main.
     name: common
     tasks_from: set_name
 by default, if the name is not set, role dependency is added to the file main.yml
+
+Roles also enable you to define other roles as a dependency by creating a meta/main.yml file with a dependencies block:
+
+dependencies:
+  - role: common
+It's also possible to pass a value to a parameter/variable in the dependent role:
+
+dependencies:
+  - { role: common, some_parameter: 3 }
+Or even execute the dependent role conditionally:
+
+dependencies:
+  - { role: common, some_parameter: 3 }
+  - { role: sshd, enable_sshd: false,
+                         when: environment == 'production' }
+
+Dependent roles are always executed before the roles that depend on them. Also, they are only executed once. If two roles state the same one as their dependency, it is only executed the first time.
+
+Imagine the roles role1, role2 and role3 with the folling meta/main.yml's:
+role1/meta/main.yml:
+
+dependencies:
+    - role: role3
+role2/meta/main.yml:
+
+dependencies:
+    - role: role3
+When executing role1 and role2 in the same playbook (with role1 called before role2), the execution order would be the following:
+
+role3 -> role1 -> role2
+You may override this behaviour by specifying allow_duplicates: yes in meta/main.yml of role1 and role2. The resulting execution order would the be:
+
+role3 -> role1 -> role3 -> role2
+
+
+### VAULTS IN ANSIBLE ##
+
+Vault is a password manager where it stores the secrets within the ansible. passwords stored in vaults can be used only by ansible and it cannot be used by any other service (like aws, terrafor etc)
+it is widely used at enterprise level, instead of vault, hashicorp or AWS secret manager is used to store passwords and it can be used from anywhere.
+
+
