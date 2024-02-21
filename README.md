@@ -471,4 +471,10 @@ it will prompt for the password to enter, need to enter the key that we used to 
 .
 for refeence, see sessin 35 video from 30mins like that.
 
+###### HANDLERS #########
 
+Handlers: running operations on change
+Sometimes you want a task to run only when a change is made on a machine. For example, you may want to restart a service if a task updates the configuration of that service, but not if the configuration is unchanged. Ansible uses handlers to address this use case. Handlers are tasks that only run when notified.
+
+
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_handlers.html
