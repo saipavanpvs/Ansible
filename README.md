@@ -351,4 +351,16 @@ So, if you are creating a RabbitMQ user with permissions for the root virtual ho
 
 In the context of message-oriented middleware systems like RabbitMQ, a virtual host is a way to create multiple isolated environments within a single RabbitMQ broker. Each virtual host has its own set of exchanges, queues, and bindings, as well as its own users and permissions. This allows you to logically separate different applications or clients, providing a level of isolation and organization.
 
+### ROLE DEPENDENCIES #########
 
+In Ansible terms, a dependency is any role that needs to have run before the current role runs.
+Role dependencies are stored in the meta/main.yml file contained within the role directory
+ eg: The dependency task shoudl be added in meta/main.yml file
+ dependencies:
+  - role: common 
+and the role that needs to be executed this dependency has to be placed in main.yml or any other name.
+- name: Configuring Name
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: set_name
+by default, if the name is not set, role dependency is added to the file main.yml
